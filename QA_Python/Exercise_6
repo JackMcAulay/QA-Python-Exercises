@@ -1,0 +1,3 @@
+import dice
+
+print(f"Dice roll 1: {dice.roll()}\nDice roll 2: {dice.roll()}")

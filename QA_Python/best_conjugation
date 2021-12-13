@@ -1,0 +1,25 @@
+import random
+
+
+def best_conjugation(words, word):
+    in_word = []
+    for i in words:
+        if i[:-1] in word and i[:-1] != word and i[:-1] != '' and len(i) != 2:
+            in_word.append(i[:-1])
+
+    if len(in_word) == 0:
+        return '---Nothing---'
+    else:
+        while True:
+            word_try = []
+            random.shuffle(in_word)
+            for i in reversed(in_word):
+                word_try.append(i)
+                if ''.join(word_try) == word:
+                    return word_try
+
+
+words_file = open('wordlist.txt', 'r')
+words_list = words_file.readlines()
+print(best_conjugation(words_list, 'hello'))
+words_file.close()

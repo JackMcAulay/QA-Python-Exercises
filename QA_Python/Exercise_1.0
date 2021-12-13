@@ -1,0 +1,4 @@
+firstname = 'Jack'
+surname = 'McAulay'
+
+print('Hello, ' + firstname + ' ' + surname + '.')
